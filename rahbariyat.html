@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jamoa | Angren ixtisoslashtirilgan maktabi</title>
+
+  <link rel="stylesheet" href="rahbariyat.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+
+  <style>
+    :root {
+      --primary: #0056b3;
+      --glass: rgba(255, 255, 255, 0.8);
+      --shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    }
+    body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; margin: 0; }
+    
+    /* Jamoa Sahifasi Stili */
+    .filter-container { text-align: center; margin: 40px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    .filter-btn {
+      padding: 12px 25px; border: 2px solid var(--primary); background: white; color: var(--primary);
+      cursor: pointer; border-radius: 30px; font-weight: 600; transition: 0.3s;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; }
+
+    .subject-group { margin-bottom: 50px; transition: all 0.5s ease; }
+    .subject-title { border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 25px; font-family: 'Poppins'; }
+    .teachers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    
+    .mini-glass-card {
+      background: var(--glass); border-radius: 15px; padding: 20px; box-shadow: var(--shadow);
+      display: flex; align-items: center; gap: 15px; transition: 0.3s;
+    }
+    .mini-glass-card:hover { transform: translateY(-5px); }
+    .mini-img-placeholder { width: 60px; height: 60px; background: #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #999; }
+    .mini-tag { font-size: 0.75rem; background: #eef2ff; color: var(--primary); padding: 3px 10px; border-radius: 10px; font-weight: 600; }
+
+    .director-card { background: white; border-radius: 20px; padding: 30px; box-shadow: var(--shadow); margin: 40px 0; }
+    .card-inner { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
+    .image-holder img { width: 250px; border-radius: 15px; }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <div class="logo">
+      <a href="home.html"><img src="images/logo.svg" alt="School Logo"></a>
+      <div class="split-text">
+        <span>Angren shahar</span>
+        <span>ixtisoslashtirilgan maktabi</span>
+      </div> 
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Asosiy</a>
+      <a href="maktab-haqida.html">Maktab haqida</a>
+      <a href="#">Yangiliklar</a>
+      <a href="bog'lanish.html">Bog‘lanish</a>
+    </nav>
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Menyuni ochish">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="contact-info">
+      <span>+998 90 123 45 67</span>
+      <span>angren_im@piima.uz</span>
+    </div>
+
+    <div class="socials">
+      <a href="https://www.facebook.com/groups/595162025629687"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/angrenimuz"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/AngrenIMUz"><i class="fab fa-telegram"></i></a>
+    </div>
+  </div>
+</header>
+
+<section style="padding: 40px 0;">
+  <div class="container">
+    <h2 style="text-align: center; font-family: 'Poppins'; font-size: 2.5rem; margin-bottom: 40px;">Maktab Rahbariyati</h2>
+    <div class="director-card">
+      <div class="card-inner">
+        <div class="image-holder"><img src="images/direktor.jpg" alt="Direktor"></div>
+        <div class="info-holder">
+          <span class="mini-tag" style="font-size: 1rem;">Maktab Direktori</span>
+          <h3 style="font-size: 2rem; margin: 10px 0;">Xasanov Jasur Shavkadovich</h3>
+          <p><i>"Sifatli ta’lim — yorug‘ kelajak poydevoridir."</i></p>
+          <p><i class="fas fa-envelope"></i> direktor@piima.uz | <i class="fas fa-phone"></i> +998 94 125 79 79</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom: 80px;">
+  <div class="container">
+    <div class="filter-container">
+      <button class="filter-btn active" onclick="filterTeachers('all')">Barchasi</button>
+      <button class="filter-btn" onclick="filterTeachers('aniq')">Aniq fanlar</button>
+      <button class="filter-btn" onclick="filterTeachers('tillar')">Tillar</button>
+      <button class="filter-btn" onclick="filterTeachers('tabiiy')">Tabiiy fanlar</button>
+      <button class="filter-btn" onclick="filterTeachers('amaliy')">Amaliy fanlar</button>
+    </div>
+
+    <div id="teachers-wrapper">
+      
+      <div class="subject-group" data-category="aniq">
+        <h3 class="subject-title">Matematika kafedrasi</h3>
+        <div class="teachers-grid">
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Nurmatova Nargiza Gapirovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>O'rozbekova Laylo Abdumutal qizi</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Raxmanova Irodaxon Ibrohim qizi</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Jo'rayev To'ymurot Muxammadovich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Kimsanov Muhammadali Mahmud o'g'li</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Yuldashev Dilmurod Yuldashevich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Adizov Sohib Rashidovich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Karimova Feruza Abdumalik qizi</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Toshpulatov Elbek Beshim o'g'li</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Dushayeva Lobar Abdumutalovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Xolmatov Doston Qaxramon o'g'li</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-calculator"></i></div><div class="mini-info"><span class="mini-tag">Matematika</span><h4>Madusmanova Nigora Abdivaxob qizi</h4></div></div>
+        </div>
+      </div>
+
+      <div class="subject-group" data-category="aniq">
+        <h3 class="subject-title">Informatika kafedrasi</h3>
+        <div class="teachers-grid">
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-laptop-code"></i></div><div class="mini-info"><span class="mini-tag">Informatika</span><h4>Amanova Zulxumor Mutalovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-laptop-code"></i></div><div class="mini-info"><span class="mini-tag">Informatika</span><h4>Dushayeva Dulfuza Maxomadjanovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-laptop-code"></i></div><div class="mini-info"><span class="mini-tag">Informatika</span><h4>Sharapova Dildor Azimjanovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-laptop-code"></i></div><div class="mini-info"><span class="mini-tag">Informatika</span><h4>Fozilova Durdona Muxibulla qizi</h4></div></div>
+        </div>
+      </div>
+
+      <div class="subject-group" data-category="aniq">
+        <h3 class="subject-title">Fizika kafedrasi</h3>
+        <div class="teachers-grid">
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-atom"></i></div><div class="mini-info"><span class="mini-tag">Fizika</span><h4>Dursyorov Jasur Zulpiqor o'g'li</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-atom"></i></div><div class="mini-info"><span class="mini-tag">Fizika</span><h4>Norova Shahodat Boboniyozovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-atom"></i></div><div class="mini-info"><span class="mini-tag">Fizika</span><h4>Niyozov Ibrohimjon Saydulla o'g'li</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-atom"></i></div><div class="mini-info"><span class="mini-tag">Fizika</span><h4>Xalmatov Ulug'murod Kaxramon o'g'li</h4></div></div>
+        </div>
+      </div>
+
+      <div class="subject-group" data-category="tillar">
+        <h3 class="subject-title">Ingliz tili kafedrasi</h3>
+        <div class="teachers-grid">
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-language"></i></div><div class="mini-info"><span class="mini-tag">Ingliz tili</span><h4>Samatova Munira Gafurjanovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-language"></i></div><div class="mini-info"><span class="mini-tag">Ingliz tili</span><h4>Xasanov Lutfiddin Xusnitdinovich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-language"></i></div><div class="mini-info"><span class="mini-tag">Ingliz tili</span><h4>Umarova Sayyora Alisherva</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-language"></i></div><div class="mini-info"><span class="mini-tag">Ingliz tili</span><h4>Abriyev Lazizjon Samatovich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-language"></i></div><div class="mini-info"><span class="mini-tag">Ingliz tili</span><h4>Shadiyeva Umida Gulamovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-language"></i></div><div class="mini-info"><span class="mini-tag">Ingliz tili</span><h4>Xudayberdiyeva Karima Axmedovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-language"></i></div><div class="mini-info"><span class="mini-tag">Ingliz tili</span><h4>Xolmuratova Dildora Baxtiyorovna</h4></div></div>
+        </div>
+      </div>
+
+      <div class="subject-group" data-category="tillar">
+        <h3 class="subject-title">Rus tili kafedrasi</h3>
+        <div class="teachers-grid">
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-book"></i></div><div class="mini-info"><span class="mini-tag">Rus tili</span><h4>Tashmatova Dilafruz Ergashbayevna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-book"></i></div><div class="mini-info"><span class="mini-tag">Rus tili</span><h4>Yuldasheva Shaxnoza Kurbanovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-book"></i></div><div class="mini-info"><span class="mini-tag">Rus tili</span><h4>Bobomatova Mavlyudaxon Shakirovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-book"></i></div><div class="mini-info"><span class="mini-tag">Rus tili</span><h4>Xunarova Barno Akbaraliyevna</h4></div></div>
+        </div>
+      </div>
+
+      <div class="subject-group" data-category="tillar">
+        <h3 class="subject-title">Ona tili va adabiyot</h3>
+        <div class="teachers-grid">
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-pen-nib"></i></div><div class="mini-info"><span class="mini-tag">Ona tili</span><h4>Matkarimova Gulbahor Abdumalikovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-pen-nib"></i></div><div class="mini-info"><span class="mini-tag">Ona tili</span><h4>Xabibullayeva Xafiza Ubaydullo qizi</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-pen-nib"></i></div><div class="mini-info"><span class="mini-tag">Ona tili</span><h4>Kulbayeva Dinara Toshpulatovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-pen-nib"></i></div><div class="mini-info"><span class="mini-tag">Ona tili</span><h4>Nasriddinova Matluba Ileshevnna</h4></div></div>
+        </div>
+      </div>
+
+      <div class="subject-group" data-category="tabiiy">
+        <h3 class="subject-title">Tabiiy fanlar (Kimyo va Biologiya)</h3>
+        <div class="teachers-grid">
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-vial"></i></div><div class="mini-info"><span class="mini-tag">Kimyo</span><h4>Salomov Abdujalil Ro'ziyevich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-vial"></i></div><div class="mini-info"><span class="mini-tag">Kimyo</span><h4>Xasanova Muhayyoxon Shovkatjon qizi</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-vial"></i></div><div class="mini-info"><span class="mini-tag">Kimyo</span><h4>Iriskulov Sanjarjon Alimovich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-dna"></i></div><div class="mini-info"><span class="mini-tag">Biologiya</span><h4>Tashmatova Mahidil Odilovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-dna"></i></div><div class="mini-info"><span class="mini-tag">Biologiya</span><h4>Rahmanova Nargiza Turgunovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-dna"></i></div><div class="mini-info"><span class="mini-tag">Biologiya</span><h4>Jumonova Kamola Mirhamid qizi</h4></div></div>
+        </div>
+      </div>
+
+      <div class="subject-group" data-category="amaliy">
+        <h3 class="subject-title">Amaliy va Ijtimoiy fanlar</h3>
+        <div class="teachers-grid">
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-landmark"></i></div><div class="mini-info"><span class="mini-tag">Tarix</span><h4>Sodiqov Jaxongir Sirojiddinovich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-landmark"></i></div><div class="mini-info"><span class="mini-tag">Tarix</span><h4>Boboxonov Jasurr Abdikarimovich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-landmark"></i></div><div class="mini-info"><span class="mini-tag">Tarix</span><h4>Raxmatova Rayhon Radjjabboyevna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-shield-alt"></i></div><div class="mini-info"><span class="mini-tag">CHQBT</span><h4>Karimov Shahobiddin Abdujalil o'g'li</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-running"></i></div><div class="mini-info"><span class="mini-tag">Sport</span><h4>Xidirov Anvarjon Xoshimovich</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-palette"></i></div><div class="mini-info"><span class="mini-tag">San'at</span><h4>Yuldasheva Dilnavoz Mamatkulovna</h4></div></div>
+          <div class="mini-glass-card"><div class="mini-img-placeholder"><i class="fas fa-globe"></i></div><div class="mini-info"><span class="mini-tag">Geografiya</span><h4>Avezov Sanjar Sadulloyevich</h4></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Aloqa markazi</h3>
+      <p>Mustaqillik ko‘chasi, 1B, Angren, Toshkent viloyati</p>
+      <p>📞 1206</p>
+      <p>✉️ angren_im@piima.uz</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/groups/595162025629687"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/angrenimuz"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@Angrenimuz"><i class="fab fa-youtube"></i></a>
+        <a href="https://t.me/AngrenIMUz"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Biz haqimizda</h3>
+      <ul>
+        <li><a href="#">Rahbariyat</a></li>
+        <li><a href="galereya.html">Fotogalereya</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Ta'lim va kampus</h3>
+      <ul>
+        <li><a href="talim.html">Ta'lim</a></li>
+        <li><a href="qabul.html">Qabul</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Maktab bilan aloqa</h3>
+      <p>O‘zingizni qiziqtirgan savollarni yuboring:</p>
+      <form class="footer-form" id="footer-contact-form">
+        <input type="email" name="user_email" placeholder="Email" required>
+        <button type="submit">Yuborish</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Angren ixtisoslashtirilgan maktabi. Barcha huquqlar himoyalangan.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() { emailjs.init("0Dldw51SWiTi1Hk-z"); })();
+
+  function filterTeachers(category) {
+    const groups = document.querySelectorAll('.subject-group');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    groups.forEach(group => {
+      const groupCat = group.getAttribute('data-category');
+      if (category === 'all' || groupCat === category) {
+        group.style.display = 'block';
+        setTimeout(() => { group.style.opacity = '1'; group.style.transform = 'scale(1)'; }, 10);
+      } else {
+        group.style.opacity = '0';
+        group.style.transform = 'scale(0.95)';
+        setTimeout(() => { group.style.display = 'none'; }, 300);
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const footerForm = document.getElementById("footer-contact-form");
+    if (footerForm) {
+      footerForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const btn = this.querySelector("button");
+        btn.innerText = "Yuborilmoqda...";
+        btn.disabled = true;
+
+        emailjs.sendForm("service_x4os40r", "template_czii6a8", this)
+          .then(() => {
+            alert("Xabaringiz qabul qilindi! ✅");
+            this.reset();
+          })
+          .catch(err => {
+            alert("Xatolik! ❌");
+          })
+          .finally(() => {
+            btn.innerText = "Yuborish";
+            btn.disabled = false;
+          });
+      });
+    }
+  });
+</script>
+
+
+<!-- Hamburger Menu JS -->
+<script>
+(function() {
+  var btn = document.getElementById("hamburger-btn");
+  var nav = document.querySelector(".nav-links");
+  if (!btn || !nav) return;
+  btn.addEventListener("click", function() {
+    btn.classList.toggle("open");
+    nav.classList.toggle("open");
+  });
+  // Close on link click
+  nav.querySelectorAll("a").forEach(function(a) {
+    a.addEventListener("click", function() {
+      btn.classList.remove("open");
+      nav.classList.remove("open");
+    });
+  });
+})();
+</script>
+</body>
+</html>

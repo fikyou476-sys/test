@@ -1,0 +1,776 @@
+/* ===============================
+   RESET
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5f7fb;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #1e293b;
+  overflow-x: hidden;
+  padding-top: 80px;  /* Header bilan box orasini ajratish */
+  padding-bottom: 50px; /* Footer bilan box orasini ajratish */
+}
+
+/* ===============================
+   GLOBAL CONTAINER
+================================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* ===============================
+   HEADER / TOPBAR
+================================= */
+
+.topbar {
+  background: #0f172a;
+  color: white;
+  padding: 12px 20px;
+  position: fixed;      /* Header tepada fixed qilindi */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* FLEX CONTAINER */
+.topbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: nowrap;
+}
+
+/* ===============================
+   LOGO
+================================= */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 38px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.split-text {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.split-text span {
+  display: block;
+}
+
+/* ===============================
+   NAVIGATION
+================================= */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #cbd5f5;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   CONTACT INFO
+================================= */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+/* ===============================
+   SOCIAL ICONS (HEADER)
+================================= */
+.topbar .socials {
+  display: flex;
+  gap: 12px;
+}
+
+.topbar .socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+
+  color: #cbd5f5;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.topbar .socials a:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: white;
+  box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
+}
+
+/* BRAND COLORS */
+.topbar .socials a:nth-child(1):hover {
+  background: #1877f2;
+}
+
+.topbar .socials a:nth-child(2):hover {
+  background: #e4405f;
+}
+
+.topbar .socials a:nth-child(3):hover {
+  background: #0088cc;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+.footer {
+  background: #0F172A;
+  color: #fff;
+  padding: 50px 20px 25px;
+  font-family: "Inter", sans-serif;
+}
+
+/* CONTAINER */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* COLUMNS */
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* TITLES */
+.footer-col h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-left: 3px solid #38bdf8;
+  padding-left: 10px;
+}
+
+/* TEXT */
+.footer-col p {
+  font-size: 14px;
+  color: #d1e3ff;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* LINKS */
+.footer-col a {
+  font-size: 14px;
+  color: #d1e3ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+/* LIST */
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   SOCIAL ICONS (FOOTER)
+================================= */
+.footer .socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.footer .socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+
+  color: #cbd5f5;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+.footer .socials a:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
+}
+
+/* BRAND COLORS */
+.footer .socials a:nth-child(1):hover {
+  background: #1877f2;
+}
+.footer .socials a:nth-child(2):hover {
+  background: #e4405f;
+}
+.footer .socials a:nth-child(3):hover {
+  background: #ff0000;
+}
+.footer .socials a:nth-child(4):hover {
+  background: #0088cc;
+}
+
+/* ===============================
+   FORM
+================================= */
+.footer-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.footer-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  flex: 1;
+  outline: none;
+}
+
+.footer-form button {
+  padding: 10px 16px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-form button:hover {
+  background: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   FOOTER BOTTOM
+================================= */
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #aac9ff;
+}
+
+/* ===============================
+   CONTACT SECTION (BOG'LANISH FORMASI)
+================================= */
+
+/* CONTAINER */
+.contact-container {
+  max-width: 1200px;
+  margin: 40px auto;    /* Yuqori va pastdan margin qo'shildi */
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+/* FORM CARD */
+.contact-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  width: 420px;
+  max-width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* TEXT */
+.contact-form h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.contact-form p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* FORM */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* INPUTS */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+  background: #f9fbff;
+  resize: none;    
+}
+
+/* FOCUS EFFECT */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #3da9fc;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(61, 169, 252, 0.15);
+}
+
+/* BUTTON */
+.contact-form button {
+  margin-top: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #1e5bb8;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.contact-form button:hover {
+  background: #144a96;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(30, 91, 184, 0.3);
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 70px;
+  }
+
+  .topbar .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-links {
+    order: 3;
+    justify-content: center;
+  }
+
+  .contact-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-form {
+    flex-direction: column;
+  }
+
+  /* Contact form responsive */
+  .contact-container {
+    margin: 30px auto;
+    justify-content: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .contact-form h1 {
+    font-size: 28px;
+  }
+}
+
+/* Kichik ekranlar uchun (480px gacha) */
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .contact-container {
+    margin: 20px auto;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form h1 {
+    font-size: 24px;
+  }
+}
+
+/* ===============================
+   HAMBURGER MENU
+================================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+  border: none;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #cbd5f5;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .topbar .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo {
+    order: 1;
+    flex-shrink: 0;
+  }
+
+  .split-text {
+    font-size: 13px;
+  }
+
+  .contact-info,
+  .topbar .socials {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0f172a;
+    padding: 10px 0;
+    z-index: 1000;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 24px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-col {
+    min-width: unset;
+    text-align: center;
+  }
+
+  .footer .socials {
+    justify-content: center;
+  }
+
+  .footer-form {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .split-text span:last-child {
+    display: none;
+  }
+  .split-text { font-size: 12px; }
+  .logo img { height: 30px; }
+}
+
+
+@media (max-width: 480px) {
+  .contact-grid, .info-cards {
+    grid-template-columns: 1fr !important;
+  }
+  .map-wrapper iframe {
+    height: 220px !important;
+  }
+}
+
+/* ===============================
+   BOG'LANISH — MOBILE OVERRIDES
+================================= */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px !important;
+    padding-bottom: 30px;
+  }
+
+  .contact-section {
+    padding: 20px 0;
+  }
+
+  .contact-container {
+    padding: 0 16px !important;
+    margin: 20px auto !important;
+    justify-content: center;
+  }
+
+  .contact-form {
+    width: 100% !important;
+    padding: 24px 20px !important;
+    border-radius: 16px;
+  }
+
+  .contact-form h1 {
+    font-size: 24px !important;
+    margin-bottom: 8px;
+  }
+
+  .contact-form p {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px; /* iOS zoom oldini oladi */
+    padding: 14px;
+  }
+
+  .contact-form button {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 65px !important;
+  }
+
+  .contact-form {
+    padding: 20px 16px !important;
+    border-radius: 12px;
+  }
+
+  .contact-form h1 {
+    font-size: 20px !important;
+  }
+}
+
+/* ===============================
+   FOOTER MOBILE — YAXSHILANGAN
+================================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 16px 20px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-col {
+    min-width: unset !important;
+    text-align: left;
+  }
+
+  /* Aloqa markazi — to'liq kenglik */
+  .footer-col:first-child {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+  }
+
+  /* Email forma — to'liq kenglik */
+  .footer-col:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .footer-col p {
+    font-size: 13px;
+  }
+
+  .footer .socials {
+    justify-content: flex-start;
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .footer .socials a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer-form {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .footer-form input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .footer-form button {
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
+    font-size: 12px;
+    padding-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-col:first-child,
+  .footer-col:last-child {
+    grid-column: 1;
+  }
+
+  .footer-form {
+    flex-direction: column;
+  }
+
+  .footer-form button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,752 @@
+/* ===============================
+   RESET
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5f7fb;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   GLOBAL CONTAINER
+================================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* ===============================
+   HEADER / TOPBAR
+================================= */
+.topbar {
+  background: #0f172a;
+  color: white;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: nowrap;
+}
+
+/* ===============================
+   LOGO
+================================= */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 38px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.split-text {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.split-text span {
+  display: block;
+}
+
+/* ===============================
+   NAVIGATION
+================================= */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #cbd5f5;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   CONTACT INFO
+================================= */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+/* ===============================
+   SOCIAL ICONS (HEADER)
+================================= */
+.topbar .socials {
+  display: flex;
+  gap: 12px;
+}
+
+.topbar .socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  color: #cbd5f5;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.topbar .socials a:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: white;
+  box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
+}
+
+.topbar .socials a:nth-child(1):hover {
+  background: #1877f2;
+}
+.topbar .socials a:nth-child(2):hover {
+  background: #e4405f;
+}
+.topbar .socials a:nth-child(3):hover {
+  background: #0088cc;
+}
+
+/* ============================================================
+   3. PREMIUM LEADERSHIP SECTION (Yangilangan dizayn)
+   ============================================================ */
+.premium-leadership {
+  padding: 80px 0;
+  background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 90%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 36px;
+  color: #0f172a;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #38bdf8;
+  border-radius: 2px;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  padding: 45px;
+  margin-bottom: 50px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+}
+
+.card-inner {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.image-holder {
+  position: relative;
+}
+
+.image-holder img {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+}
+
+.quick-stats {
+  position: absolute;
+  bottom: -15px;
+  right: -20px;
+  background: #38bdf8;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
+.tag {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.info-holder h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+.quote {
+  font-style: italic;
+  color: #475569;
+  margin-bottom: 25px;
+  padding-left: 20px;
+  border-left: 4px solid #38bdf8;
+}
+
+.leader-contacts p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.leader-contacts i {
+  color: #38bdf8;
+}
+
+/* Sub-Leaders Grid */
+.sub-leaders-flex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.mini-glass-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 25px;
+  text-align: center;
+  transition: 0.4s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.mini-glass-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  border-color: #38bdf8;
+}
+
+.mini-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #f8fafc;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.mini-tag {
+  color: #38bdf8;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.view-btn {
+  margin-top: 20px;
+  background: #f1f5f9;
+  color: #0f172a;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mini-glass-card:hover .view-btn {
+  background: #38bdf8;
+  color: white;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+.footer {
+  background: #0F172A;
+  color: #fff;
+  padding: 50px 20px 25px;
+  font-family: "Inter", sans-serif;
+}
+
+/* CONTAINER */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* COLUMNS */
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* TITLES */
+.footer-col h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-left: 3px solid #38bdf8;
+  padding-left: 10px;
+}
+
+/* TEXT */
+.footer-col p {
+  font-size: 14px;
+  color: #d1e3ff;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* LINKS */
+.footer-col a {
+  font-size: 14px;
+  color: #d1e3ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+/* LIST */
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   SOCIAL ICONS (FOOTER)
+================================= */
+.footer .socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.footer .socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+
+  color: #cbd5f5;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+.footer .socials a:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
+}
+
+/* BRAND COLORS */
+.footer .socials a:nth-child(1):hover {
+  background: #1877f2;
+}
+.footer .socials a:nth-child(2):hover {
+  background: #e4405f;
+}
+.footer .socials a:nth-child(3):hover {
+  background: #ff0000;
+}
+.footer .socials a:nth-child(4):hover {
+  background: #0088cc;
+}
+
+/* Footer Form */
+.footer-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.footer-form input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.footer-form button {
+  background: #38bdf8;
+  color: white;
+  border: none;
+  padding: 0 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.footer-form button:hover {
+  background: #0ea5e9;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* ============================================================
+   5. RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 992px) {
+  .card-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .image-holder img {
+    width: 100%;
+    max-width: 320px;
+  }
+  .quick-stats {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -20px;
+  }
+  .sub-leaders-flex {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contact-info {
+    text-align: center;
+  }
+  .sub-leaders-flex {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+/* ===============================
+   HAMBURGER MENU
+================================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+  border: none;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #cbd5f5;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .topbar .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo {
+    order: 1;
+    flex-shrink: 0;
+  }
+
+  .split-text {
+    font-size: 13px;
+  }
+
+  .contact-info,
+  .topbar .socials {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0f172a;
+    padding: 10px 0;
+    z-index: 1000;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 24px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-col {
+    min-width: unset;
+    text-align: center;
+  }
+
+  .footer .socials {
+    justify-content: center;
+  }
+
+  .footer-form {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .split-text span:last-child {
+    display: none;
+  }
+  .split-text { font-size: 12px; }
+  .logo img { height: 30px; }
+}
+
+
+@media (max-width: 600px) {
+  .team-grid, .cards-grid, .staff-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===============================
+   FOOTER MOBILE — YAXSHILANGAN
+================================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 16px 20px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-col {
+    min-width: unset !important;
+    text-align: left;
+  }
+
+  /* Aloqa markazi — to'liq kenglik */
+  .footer-col:first-child {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+  }
+
+  /* Email forma — to'liq kenglik */
+  .footer-col:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .footer-col p {
+    font-size: 13px;
+  }
+
+  .footer .socials {
+    justify-content: flex-start;
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .footer .socials a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer-form {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .footer-form input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .footer-form button {
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
+    font-size: 12px;
+    padding-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-col:first-child,
+  .footer-col:last-child {
+    grid-column: 1;
+  }
+
+  .footer-form {
+    flex-direction: column;
+  }
+
+  .footer-form button {
+    width: 100%;
+  }
+}

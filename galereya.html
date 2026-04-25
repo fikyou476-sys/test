@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angren ixtisoslashtirilgan maktabi</title>
+
+  <link rel="stylesheet" href="galereya.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <div class="logo">
+      <a href="home.html">
+        <img src="images/logo.svg" alt="School Logo">
+      </a>
+      <div class="split-text">
+        <span>Angren shahar</span>
+        <span>ixtisoslashtirilgan maktabi</span>
+      </div> 
+    </div>
+
+    <nav class="nav-links">
+      <a href="home.html">Asosiy</a>
+      <a href="maktab-haqida.html">Maktab haqida</a>
+      <a href="#">Yangiliklar</a>
+      <a href="bog'lanish.html">Bog‘lanish</a>
+    </nav>
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Menyuni ochish">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="contact-info">
+      <span>+998 90 123 45 67</span>
+      <span>angren_im@piima.uz</span>
+    </div>
+
+    <div class="socials">
+      <a href="https://www.facebook.com/groups/595162025629687"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/angrenimuz"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/AngrenIMUz"><i class="fab fa-telegram"></i></a>
+    </div>
+  </div>
+</header>
+
+<section class="gallery-section">
+  <div class="container">
+    <h2 class="section-title">Maktab hayotidan fotolavhalar</h2>
+    <div class="gallery-grid">
+      
+      <div class="gallery-item scatter-box">
+        <img src="images/Kirish.jpg" class="main-img">
+        <img src="images/kirish2.jpg" class="scatter-img p1">
+        <img src="images/kirish3.jpg" class="scatter-img p2">
+        <div class="overlay"><span>Maktab binosi</span></div>
+      </div>
+
+      <div class="gallery-item scatter-box">
+        <img src="images/dars2.jpg" class="main-img">
+        <img src="images/dars1.jpg" class="scatter-img p1">
+        <img src="images/dars3.jpg" class="scatter-img p2">
+        <div class="overlay"><span>Dars jarayoni</span></div>
+      </div>
+
+      <div class="gallery-item scatter-box">
+        <img src="images/Kutubxona 1.jpg" class="main-img">
+        <img src="images/Kutubxona 2.jpg" class="scatter-img p1">
+        <div class="overlay"><span>Kutubxona</span></div>
+      </div>
+
+      <div class="gallery-item scatter-box">
+        <img src="images/sport2.jpg" class="main-img">
+        <img src="images/sport1.jpg" class="scatter-img p2">
+        <div class="overlay"><span>Sport</span></div>
+      </div>
+
+      <div class="gallery-item scatter-box">
+        <img src="images/ustozlar.jpg" class="main-img">
+        <img src="images/ustozlar2.jpg" class="scatter-img p1">
+        <img src="images/ustozlar3.jpg" class="scatter-img p2">
+        <div class="overlay"><span>Ustozlar</span></div>
+      </div>
+      </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Aloqa markazi</h3>
+      <p>Mustaqillik ko‘chasi, 1B, Angren, Toshkent viloyati</p>
+      <p>📞 1206</p>
+      <p>✉️ angren_im@piima.uz</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/groups/595162025629687"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/angrenimuz"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@Angrenimuz"><i class="fab fa-youtube"></i></a>
+        <a href="https://t.me/AngrenIMUz"><i class="fab fa-telegram-plane"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Biz haqimizda</h3>
+      <ul>
+        <li><a href="rahbariyat.html">Rahbariyat</a></li>
+        <li><a href="#">Fotogalereya</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Ta'lim va kampus</h3>
+      <ul>
+        <li><a href="talim.html">Ta'lim</a></li>
+        <li><a href="qabul.html">Qabul</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Maktab bilan aloqa</h3>
+      <p>O‘zingizni qiziqtirgan savollarni yuboring:</p>
+      <form class="footer-form" id="footer-contact-form">
+        <input type="email" name="user_email" placeholder="Email" required>
+        <button type="submit">Yuborish</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Angren ixtisoslashtirilgan maktabi. Barcha huquqlar himoyalangan.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function() {
+    emailjs.init("0Dldw51SWiTi1Hk-z");
+})();
+
+document.addEventListener("DOMContentLoaded", function () {
+    const footerForm = document.getElementById("footer-contact-form");
+    if (footerForm) {
+        footerForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const btn = this.querySelector("button");
+            const originalText = btn.innerText;
+            btn.innerText = "Yuborilmoqda...";
+            btn.disabled = true;
+
+            emailjs.sendForm("service_x4os40r", "template_czii6a8", this)
+                .then(() => {
+                    alert("Xabaringiz qabul qilindi! ✅");
+                    this.reset();
+                })
+                .catch(err => {
+                    alert("Xatolik ❌: " + (err.text || "Xatolik yuz berdi"));
+                })
+                .finally(() => {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                });
+        });
+    }
+});
+</script>
+
+
+<!-- Hamburger Menu JS -->
+<script>
+(function() {
+  var btn = document.getElementById("hamburger-btn");
+  var nav = document.querySelector(".nav-links");
+  if (!btn || !nav) return;
+  btn.addEventListener("click", function() {
+    btn.classList.toggle("open");
+    nav.classList.toggle("open");
+  });
+  // Close on link click
+  nav.querySelectorAll("a").forEach(function(a) {
+    a.addEventListener("click", function() {
+      btn.classList.remove("open");
+      nav.classList.remove("open");
+    });
+  });
+})();
+</script>
+
+<!-- ===== LIGHTBOX MODAL ===== -->
+<div id="lightbox" style="
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(0,0,0,0.92); align-items:center; justify-content:center;
+  flex-direction:column; padding:16px;
+">
+  <!-- Close button -->
+  <button id="lb-close" style="
+    position:absolute; top:16px; right:16px;
+    background:rgba(255,255,255,0.15); border:none; color:white;
+    width:42px; height:42px; border-radius:50%; font-size:22px;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    z-index:10001;
+  ">✕</button>
+
+  <!-- Caption -->
+  <div id="lb-caption" style="
+    color:white; font-family:Poppins,sans-serif; font-size:16px;
+    font-weight:600; margin-bottom:12px; text-align:center;
+  "></div>
+
+  <!-- Main image -->
+  <div style="position:relative; max-width:100%; max-height:70vh; display:flex; align-items:center; gap:12px;">
+    <button id="lb-prev" style="
+      background:rgba(255,255,255,0.15); border:none; color:white;
+      width:40px; height:40px; border-radius:50%; font-size:20px;
+      cursor:pointer; flex-shrink:0;
+    ">‹</button>
+
+    <img id="lb-img" src="" alt="" style="
+      max-width:calc(100vw - 120px); max-height:65vh;
+      object-fit:contain; border-radius:12px;
+      transition:opacity 0.2s ease;
+    ">
+
+    <button id="lb-next" style="
+      background:rgba(255,255,255,0.15); border:none; color:white;
+      width:40px; height:40px; border-radius:50%; font-size:20px;
+      cursor:pointer; flex-shrink:0;
+    ">›</button>
+  </div>
+
+  <!-- Thumbnail strip -->
+  <div id="lb-thumbs" style="
+    display:flex; gap:8px; margin-top:14px; overflow-x:auto;
+    max-width:100%; padding-bottom:4px; scrollbar-width:none;
+  "></div>
+</div>
+
+<script>
+(function() {
+  // Har bir scatter-box dan barcha rasmlarni to'playmiz
+  var groups = [];
+  document.querySelectorAll('.scatter-box').forEach(function(box) {
+    var imgs = [];
+    var caption = box.querySelector('.overlay span');
+    var label = caption ? caption.textContent.trim() : '';
+    box.querySelectorAll('img').forEach(function(img) {
+      imgs.push(img.getAttribute('src'));
+    });
+    if (imgs.length) groups.push({ label: label, imgs: imgs });
+  });
+
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCaption = document.getElementById('lb-caption');
+  var lbThumbs = document.getElementById('lb-thumbs');
+  var lbPrev = document.getElementById('lb-prev');
+  var lbNext = document.getElementById('lb-next');
+  var lbClose = document.getElementById('lb-close');
+
+  var curGroup = 0, curIdx = 0;
+
+  function openLightbox(groupIdx, imgIdx) {
+    curGroup = groupIdx;
+    curIdx = imgIdx || 0;
+    renderLightbox();
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function renderLightbox() {
+    var g = groups[curGroup];
+    lbCaption.textContent = g.label;
+    lbImg.style.opacity = '0';
+    lbImg.src = g.imgs[curIdx];
+    lbImg.onload = function() { lbImg.style.opacity = '1'; };
+
+    // Thumbnails
+    lbThumbs.innerHTML = '';
+    g.imgs.forEach(function(src, i) {
+      var thumb = document.createElement('img');
+      thumb.src = src;
+      thumb.style.cssText = 'width:60px;height:60px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid ' + (i===curIdx ? '#38bdf8' : 'transparent') + ';flex-shrink:0;transition:0.2s;';
+      thumb.addEventListener('click', function() { curIdx = i; renderLightbox(); });
+      lbThumbs.appendChild(thumb);
+    });
+
+    // Prev/next ko'rinishi
+    lbPrev.style.opacity = g.imgs.length > 1 ? '1' : '0.2';
+    lbNext.style.opacity = g.imgs.length > 1 ? '1' : '0.2';
+  }
+
+  function prevImg() {
+    var g = groups[curGroup];
+    curIdx = (curIdx - 1 + g.imgs.length) % g.imgs.length;
+    renderLightbox();
+  }
+  function nextImg() {
+    var g = groups[curGroup];
+    curIdx = (curIdx + 1) % g.imgs.length;
+    renderLightbox();
+  }
+
+  lbPrev.addEventListener('click', prevImg);
+  lbNext.addEventListener('click', nextImg);
+  lbClose.addEventListener('click', closeLightbox);
+
+  // Backdrop bosish
+  lb.addEventListener('click', function(e) {
+    if (e.target === lb) closeLightbox();
+  });
+
+  // Klaviatura
+  document.addEventListener('keydown', function(e) {
+    if (lb.style.display === 'none') return;
+    if (e.key === 'ArrowLeft') prevImg();
+    if (e.key === 'ArrowRight') nextImg();
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Touch swipe
+  var touchStartX = 0;
+  lb.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? nextImg() : prevImg(); }
+  }, {passive:true});
+
+  // Har bir scatter-box ga click/tap qo'shamiz
+  document.querySelectorAll('.scatter-box').forEach(function(box, groupIdx) {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function(e) {
+      // Qaysi rasm bosilganini aniqlash
+      var clickedImg = e.target.closest('img');
+      var imgIdx = 0;
+      if (clickedImg) {
+        var allImgs = Array.from(box.querySelectorAll('img'));
+        var found = allImgs.indexOf(clickedImg);
+        if (found >= 0) imgIdx = found;
+      }
+      openLightbox(groupIdx, imgIdx);
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
